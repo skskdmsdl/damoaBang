@@ -1,0 +1,405 @@
+﻿@CHARSET "UTF-8";
+/********* 회원정보 수정 페이지 **********/
+.edit-info1,
+.edit-info2 {
+    display: none;
+    border-radius: 15px;
+    clear: both;
+    padding: 20px;
+    margin: 50px auto;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+    width: 800px;
+    height: 500px;
+}
+
+.edit-info1 table input,
+.edit-info2 table input {
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 20px;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+}
+
+.editBtn input {
+    color: white;
+    border: none;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 30px;
+    background: rgb(255, 138, 61);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.editBtn {
+    margin-top: 120px;
+}
+
+#memberId_ {
+    border: none;
+}
+
+.edit-infoPage,
+.edit-passwordPage {
+    padding: 30px 250px;
+}
+
+.edit-infoPage p,
+.edit-passwordPage p {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+#deleteMem {
+    position: absolute;
+    left: 930px;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    background-color: white;
+}
+
+
+/********* 프로필 페이지 **********/
+.mypage-alldiv{
+	margin-top: 2em;
+	margin-left: 7em;
+	margin-bottom: 14em;
+}
+.mypage-Resultdiv{
+	margin-top: 2em;
+	margin-left: 7em;
+	margin-bottom: 14em;
+}
+.mypage-ForSaleManage{
+	margin-top: 2em;
+	margin-left: 7em;
+	margin-bottom: 14em;
+}
+.mypage-profile1,
+.mypage-profile2,
+.mypage-profile3 {
+    border-radius: 15px;
+    clear: both;
+    padding: 20px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+    width: 250px;
+    height: 400px;
+    display: inline-block;
+}
+
+.mypage-profile2_2,
+.mypage-profile3_3 {
+  display: none;
+}
+.mypage-profile2,
+.mypage-profile3 {
+    display: none;
+}
+.mypage-profile3_3{
+	width: 75em;
+}
+
+.mypage-allView input {
+  text-align: center;
+  border: none;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.mypage-allView .mypage-id {
+  font-size: 25px;
+  font-weight: 800;
+  height: 40px;
+}
+.allview-content {
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 15px;
+	clear: both;
+	padding: 20px;
+	width: auto;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.3);
+	height: auto;
+}
+.brokerForSales{
+	display:inline-block;
+	vertical-align: top;
+	border-radius: 15px;
+	clear: both;
+	padding: 20px;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.3);
+	height: 20em;
+	margin-left: 3em;
+	margin-top: 2em;
+	width: 41em;
+}
+.memberIdparagraph{
+	margin-top: 2em;
+}
+.countPercentMemberId{
+	color: rgb(255,138,61);
+}
+.brokerForSales p {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 800;
+  margin-top: 1em;
+  color: rgb(220, 220, 220);
+}
+.myResultState-div{
+	border-bottom: 1px solid black;
+}
+.myStateResult{
+	margin-left: 10px; 
+	margin-bottom: 14px; 
+	font-size: x-large; 
+	font-weight: 600;
+}
+.myForSalelistallview{
+	font-weight: 900; font-size:x-large; color: rgb(255,138,61); margin-bottom: 1em; margin-top: 1em;
+}
+.HasnotLikelistallview{
+	margin-left: 10px; 
+	margin-bottom: 14px; 
+	font-size: x-large; 
+	font-weight: 600;
+}
+.hasnotClickForSaleboard{
+	margin-left: 10px;
+	font-size: x-large;
+	font-weight: 600;
+}
+.allview-result{
+	font-weight: 900;
+	font-size: x-large;
+	color: rgb(255,138,61);
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+.allviewPageBar{
+	clear:both;
+	text-align: center; 
+	font-size: large; 
+	font-weight: 600;
+}
+.ClickedShowTotaLikelList{
+	margin-bottom: 1em;
+	margin-top: 1em;
+	font-weight: 900;
+	font-size: x-large;
+	color: rgb(255,138,61);
+}
+.myForSaleCountViewtotal{
+	margin-bottom: 1em;
+	margin-top: 1em;
+	font-weight: 900;
+	font-size: x-large;
+	color: rgb(255,138,61);
+}
+
+.mypage-allView input {
+    text-align: center;
+    border: none;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.mypage-allView table {
+  width: 80%;
+  height: 300px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.mypage-allView table td {
+  margin-bottom: 15px;
+}
+
+.mypage-allView .mypage-id {
+    font-size: 25px;
+    font-weight: 800;
+    height: 40px;
+}
+
+.mypage-allView table {
+    width: 80%;
+    height: 300px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.mypage-allView table td {
+    margin-bottom: 15px;
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+.filebox label {
+    display: inline-block;
+    padding: 5px 20px;
+    vertical-align: middle;
+    color: white;
+    border: none;
+    top: 0;
+    left: 0;
+    background: rgb(255, 138, 61);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#profileImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.myForSaleListViewCount{
+	width: 46em;
+	height: 11em;
+	margin-top: 6em;
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 15px;
+	clear: both;
+	padding: 20px;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.3);
+}
+/* .ClickedLikeListShow{ */
+/* 	width: 53em; */
+/* 	height: 31em; */
+/* 	display: inline-block; */
+/* 	vertical-align: top; */
+/* 	border-radius: 15px; */
+/* 	clear: both; */
+/* 	padding: 20px; */
+/* 	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.3); */
+/* } */
+.SearchRoomForSaleparagraph{
+	font-weight: 800; font-size: large;
+}
+.myForSaleRoomImgTitle{
+	text-align: center;
+	font-weight: 900;
+}
+#my_ForSaleroomImg {
+  width: 12em;
+  display: inline-block;
+  vertical-align: top;
+  
+}
+.ClickedLikeListPageBar{
+	clear:both;
+	text-align: center;
+	font-size: medium;
+	font-weight: 600;
+}
+.SearchRoomclickLikeEnrollDate{
+	font-weight: 400;
+	font-size: medium;
+	float: right;
+}
+.approveForSaleRoom{
+	font-weight: 400;
+	font-size: medium;
+	margin-left: 0;
+}
+/********* 마이페이지 nav-bar **********/
+.mypage-nav-bar {
+	width: 100%;
+	min-width: 1400px;
+	height: 54px;
+	background-color: rgb(255, 255, 255);
+	position: relative;
+	z-index: auto;
+	border-bottom: 1px solid rgb(235, 235, 235);
+	font-weight: 800;
+	font-size: 25px;
+	text-align: center;
+}
+.profile-nav {
+	position: relative;
+	top: 23%;
+	cursor: pointer;
+}
+.setting-nav {
+	position: relative;
+	top: 23%;
+	cursor: pointer;
+}
+.sub1 {
+	width: 100%;
+	min-width: 1400px;
+	height: 51px;
+	background-color: rgb(255, 255, 255);
+	position: relative;
+	z-index: auto;
+	border-bottom: 1px solid rgb(235, 235, 235);
+	font-weight: 600;
+	font-size: 20px;
+	text-align: center;
+}
+.click1 {
+	position: relative;
+	top: 23%;
+	cursor: pointer;
+}
+.click2 {
+	position: relative;
+	top: 23%;
+	cursor: pointer;
+}
+.click3 {
+	position: relative;
+	top: 23%;
+	cursor: pointer;
+}
+.sub2 {
+	width: 100%;
+	min-width: 1400px;
+	height: 51px;
+	background-color: rgb(255, 255, 255);
+	position: relative;
+	z-index: auto;
+	border-bottom: 1px solid rgb(235, 235, 235);
+	font-weight: 600;
+	font-size: 20px;
+	text-align: center;
+	display: none;
+}
+.click4 {
+	position: relative;
+	top: 23%;
+	cursor: pointer;
+}
+.click5 {
+	position: relative;
+	top: 23%;
+	cursor: pointer;
+}
+
+
+/********* 회원정보 수정 페이지 **********/
+
+
+/********* 회원정보 수정 페이지 **********/

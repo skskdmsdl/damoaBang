@@ -1,0 +1,645 @@
+﻿@CHARSET "UTF-8";
+/*************방찾기 메인 페이지***************/
+.lookinRoomView{
+	text-align: center;
+	border-bottom: 1px solid rgb(235,235,235);
+	padding-bottom: 1em;
+}
+.RoomInsert{
+	display: inline;
+}
+select.selectOption {
+	height: 1.5em;
+	border: none;
+	width: auto;
+	font-size: 18px;
+	margin: 15px 15px 0 10px;
+}
+select.roomselectOption {
+	height: 1.5em;
+	border: none;
+	width: auto;
+	font-size: 18px;
+	margin: 0px 1em 0 1em;
+}
+
+#localSearch {
+	width: 169px;
+	height: 32px;
+	border-radius: 5px;
+	border: solid 1px #dbdbdb;
+	font-size: 15px;
+	color: black;
+}
+
+.lookingRoomView section {
+	display: inline;
+	margin-left: 80px;
+}
+
+.lookingRoomView {
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.room-searchBtn {
+	color: white;
+	border: none;
+	width: 50px;
+	height: 30px;
+	background: rgb(255, 138, 61);
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+#roomViewCon1 {
+	margin: 50px 10px 50px 100px;
+	border-right: 1px #ddd solid;
+	width: 40%;
+	float: left;
+}
+#roomViewCon1,
+#rooomViewCon1_1 {
+  margin: 50px 10px 50px 100px;
+  border-right: 1px #ddd solid;
+  width: 40%;
+  float: left;
+}
+
+#roomViewCon2 {
+	width: 45%;
+	float: left;
+	margin-top: 130px;
+	text-align: center;
+}
+
+#roomViewCon1 h2 {
+	color: black;
+	font-weight: 800;
+}
+
+#roomViewCon1 div {
+	margin-bottom: 50px;
+}
+
+#roomViewCon1 img {
+	width: 400px;
+	height: 280px;
+}
+
+#roomViewCon1 input {
+	width: 10em;
+	margin: 15px 0;
+	text-align: center;
+	border-radius: 5px;
+	color: orange;
+	border: 1px solid #666;
+}
+
+.roomUpdateBtn {
+	border: transparent;
+	width: 120px;
+	height: 30px;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color: rgb(255,138,61);
+	color: white;
+}
+
+.roomUpdateBtn:hover {
+	background-color: rgb(255, 138, 61);
+	color: white;
+}
+
+#map-searchFrm {
+	display: inline;
+}
+
+
+/*페이지바*/
+div#pageBar {
+  margin: 10px 150px 20px 0;
+  text-align: center;
+}
+div#pageBar span.cPage {
+  color: #0066ff;
+  margin-right: 5px;
+}
+div#pageBar a {
+  margin-right: 5px;
+}
+
+
+
+/********* 방 등록 페이지 **********/
+#roomUploadFile input {
+	margin: 5px 0;
+}
+
+.roomUpdatePage {
+	margin: 50px 0 0 15%;
+}
+
+.roomUpdatePage h1 {
+	color: #000;
+	font-size: 25px;
+	margin-bottom: 50px;
+}
+
+.roomUpdatePage section {
+	margin: 0;
+	padding: 0;
+}
+
+#boardTitle {
+	border-radius: 5px;
+	width: 76%;
+	height: 30px;
+	font-size: 18px;
+	padding: 2px;
+	border: 1px solid #ddd;
+}
+
+#roomUpdateTxt {
+	border-radius: 5px;
+	width: 75%;
+	height: 500px;
+	font-size: 16px;
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+#roomUpSection select {
+  float: left;
+  margin: 30px 20px 20px 0;
+  font-size: 16px;
+}
+
+#boardBtn1 {
+	margin-left: 30%;
+	color: white;
+	font-size: 18px;
+	border: none;
+	top: 0;
+	left: 0;
+	width: 100px;
+	height: 50px;
+	background: rgb(255, 138, 61);
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+#roomUpSection span {
+  float: left;
+}
+#movedate,
+#floor {
+  margin: 30px 15px 0 0;
+  border: 1px solid #ddd;
+  height: 25px;
+  border-radius: 5px;
+}
+#floor {
+  width: 35px;
+}
+#roomUploadFile {
+  clear: both;
+}
+#roomUpSearch {
+  float: left;
+}
+#roomUpSearchTxt {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+#roomUpSearch input,
+#roomUpSearch p {
+  margin-left: 30px;
+}
+#roomUpMap #map {
+  float: right;
+}
+#roomUpFile {
+  clear: both;
+  margin: 0 0 100px 30px;
+}
+#roomUpFile p {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 50px 0;
+}
+.modifyBoard {
+	margin-right: 13px;
+	color: white;
+	font-size: 15px;
+	border: none;
+	width: 5em;
+	height: 2em;
+	background: rgb(255,138,61);
+	cursor: pointer;
+	border-radius: 50px;
+}
+.deleteBoard{
+	color: white;
+	font-size: 15px;
+	border: none;
+	width: 5em;
+	height: 2em;
+	background: rgb(255,138,61);
+	cursor: pointer;
+	border-radius: 50px;
+}
+
+/********* 방 상세 정보 페이지 **********/
+#roomDetailView1 {
+	margin: 50px 0 50px 138px;
+	border-right: 1px #ddd solid;
+	width: 180px;
+	float: left;
+}
+
+#roomDetailView2 {
+	width: 120px;
+	float: left;
+	border-right: 1px #ddd solid;
+	margin: 50px 10px 50px 20px;
+}
+
+#roomDetailView3 {
+	width: 180px;
+	float: left;
+	margin: 50px 10px 50px 20px;
+}
+
+#roomDetailView4 {
+	width: 140px;
+	float: left;
+	margin: 50px 0 50px 250px;
+}
+
+#roomDetailView5 {
+	width: 180px;
+	float: left;
+	margin: 50px 10px 50px 20px;
+}
+
+.roomDetail-info {
+	font-size: 16px;
+}
+
+#roomDetailTxt1, #roomDetailTxt2, #roomDetailTxt3 {
+	font-size: 25px;
+	font-weight: 800;
+}
+
+#profileImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.brokerPhoneBtn {
+	color: white;
+	font-size: 15px;
+	border: none;
+	top: 0;
+	left: 0;
+	width: 120px;
+	height: 50px;
+	background: rgb(255, 138, 61);
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+#roomDetailView4 p {
+	text-align: right;
+}
+
+#roomDetail-info2 {
+	clear: both;
+	margin-left: 90em;
+	font-size: 12px;
+	width: fit-content;
+	display:inline-block;
+}
+#roomDetail-LikeAlarm {
+	clear: both;
+	margin-left: 12em;
+	font-size: 12px;
+	width: 81%;
+	display:inline-block;
+}
+
+#roomDetail-info2 img {
+	cursor: pointer;
+	width: 25px;
+	height: 25px;
+	vertical-align: middle;
+	margin: 0 10px;
+}
+#roomDetail-LikeAlarm img {
+	cursor: pointer;
+	width: 25px;
+	height: 25px;
+	vertical-align: middle;
+	margin: 0 10px;
+}
+
+#roomDetail-info2 img:hover {
+	color: rgb(255, 138, 61);
+}
+
+#roomDetail-LikeAlarm img:hover {
+	color: rgb(255, 138, 61);
+}
+.roomDetail-info3 {
+	margin-left: 100px;
+	height: 220px;
+}
+
+.roomDetail-info3 p {
+	padding: 9px 15px;
+	color: white;
+	float: left;
+}
+
+.roomDetail-info3 .detail-info1 {
+	background: #ffa500;
+}
+
+#detail-infoTitle {
+	margin-top: 30px;
+	margin-bottom: 10px;
+	background: rgb(255, 138, 61);
+	width: 91%;
+	height: 39px;
+	padding: 0;
+}
+
+#detail-list li {
+	border-bottom: 1px solid #999;
+	width: 22.5%;
+	float: left;
+	margin: 10px 0;
+	padding: 7px 0;
+}
+
+#detail-list p {
+	float: left;
+	color: #888;
+	padding: 0;
+	width: 120px;
+}
+
+#detail-list div {
+	float: left;
+	padding: 0;
+	width: 100px;
+}
+
+.roomDetail-info4 {
+	clear: both;
+	margin: 50px 0 50px 100px;
+	height: 400px;
+	width: 1200px;
+}
+
+.roomDetailImg01 {
+	height: 400;
+	width: 600px;
+	height: 400px;
+}
+
+#roomImg-number {
+	color: white;
+	vertical-align: middle;
+	height: 42px;
+	background-color: rgba(34, 34, 34, 0.7);
+	position: absolute;
+	top: 580px;
+	left: 110px;
+	z-index: 1;
+	padding: 0px 17px;
+	border-radius: 3px;
+}
+
+.roomDetailImg03 {
+	float: left;
+	height: 400px;
+	width: 600px;
+}
+
+#roomImg-number p {
+	text-align: center;
+	padding-top: 10px;
+}
+
+.roomDetail-info4 div, .roomDetail-info4 span {
+	float: left;
+	margin: 0;
+}
+
+.roomDetailImg03 span {
+	height: 200px;
+	width: 300px;
+}
+
+.roomDetailImg03 img {
+	width: 100%;
+	height: 100%;
+}
+
+.roomDetail-info5 {
+	width: 1200px;
+	clear: both;
+	margin-top: 80px;
+	padding-left: 100px;
+}
+
+.roomDetail-info5 p {
+	text-align: center;
+	width: 1200px;
+	font-size: 25px;
+	font-weight: 800;
+}
+
+#roomDetail-info5-content {
+	height: 550px;
+	width: 600px;
+	text-align: center;
+	margin-top: 80px;
+	padding: 0 300px;
+}
+
+.roomDetail-info6 {
+	margin: 40px 0 20px 100px;
+	width: 1200px;
+}
+
+.roomDetail-info6 p {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.roomDetail-info6 #roomLocation {
+  text-align: center;
+  margin-bottom: 20px;
+  border: none;
+  width: 1200px;
+  outline: none;
+}
+
+.roomDetail-info6 .map-title {
+	font-size: 25px;
+	font-weight: 800;
+}
+
+#map {
+	margin: 0 auto;
+}
+#roomMap {
+  margin: 0 auto;
+}
+#closeBtn, #find_closeBtn {
+	position: absolute;
+	font-size: 30px;
+	cursor: pointer;
+	background-color: transparent;
+	top: 2px;
+	left: 467px;
+	border: none;
+}
+.closeShowBrokerBtn{
+	position: absolute;
+	font-size: 30px;
+	cursor: pointer;
+	background-color: transparent;
+	top: 4px;
+	left: 370px;
+	border: none;
+}
+.closeBtn, #find_closeBtn {
+	position: absolute;
+	font-size: 30px;
+	cursor: pointer;
+	background-color: transparent;
+	top: 2px;
+	left: 467px;
+	border: none;
+}
+#cerFrm h3 {
+	text-align: center;
+	margin: 20px 0;
+	color: black;
+	font-size: x-large
+}
+#cerFrm #colorisred {
+	text-align: center;
+	margin-bottom: 20px;
+	color: red;
+	font-weight: 800;
+}
+#cerFrm #textalignleft {
+	text-align: left;
+	font-weight: 800;
+}
+#cerFrm .colorgray {
+	text-align: left;
+	color: gray;
+}
+#certificationWrap {
+	display: none;
+	background-color: rgba(0, 0, 0, 0.7);
+	width: 100%;
+	height: 100%;
+	z-index: 120;
+	top: 0;
+	margin: 0;
+	position: fixed;
+}
+#certification {
+	display: none;
+	margin: 0;
+	padding: 0;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	position: fixed;
+	z-index: 130;
+	background: white;
+	height: 496px;
+	width: 500px;
+}
+#cerFrm #cerTitle {
+	margin: 25px 0 0 0;
+	font-weight: 800;
+}
+/********* 방찾기 메인페이지 **********/
+div.nav-bar {
+	width: 100%;
+	min-width: 1400px;
+	height: 60px;
+	background-color: rgb(255, 255, 255);
+	position: relative;
+	z-index: auto;
+	border-bottom: 1px solid rgb(235, 235, 235);
+	font-weight: 800;
+	font-size: 25px;
+	text-align: center;
+}
+.RoomSearch-nav {
+	position: relative;
+	top: 23%;
+}
+/*****************************************/
+.filter-roomtype__select__content{
+	border-bottom: 1px solid rgb(235,235,235);
+	text-align: center;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+/********** dl dt 태그 적용 ****/
+#allcategory-search {
+	color: white;
+	border: none;
+	width: 86px;
+	height: 30px;
+	background: rgb(255, 138, 61);
+	border-radius: 10px;
+	cursor: pointer;
+}
+#allcategory-reset {
+	color: white;
+	border: none;
+	width: 86px;
+	height: 30px;
+	background: rgb(255, 138, 61);
+	border-radius: 10px;
+	cursor: pointer;
+}
+.FakeForSaleParagraph{
+	color: red;
+	font-weight: 900;
+}
+.CheckYourIdentity{
+	font-weight: bolder;
+}
+#cerEmail {
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 8em;
+  width: 215px;
+}
+#cerNumber {
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	margin-left: 8em;
+	width: 268px;
+}
+.cer-field {
+	padding: 5px;
+}
