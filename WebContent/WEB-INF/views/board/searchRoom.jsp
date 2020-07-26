@@ -54,7 +54,6 @@
      	</section>
      </div>  
 	
-	
 		<div id="roomViewCon1">
             <h2>전체 게시글 : <%= cnt %>개</h2>
 	 <% 
@@ -88,11 +87,6 @@
 				
 					} 
 				%>  
-				
-				
- 
-				
-				
 				 
 		<div id='pageBar'>
 			<%= pageBar %>
@@ -184,12 +178,6 @@ geocoder.addressSearch(keyword, function(result, status) {
             position: coords
         });
 
-        // 인포윈도우로 장소에 대한 설명을 표시합니다
-        /*  var infowindow = new kakao.maps.InfoWindow({
-            //content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
-        });
-        infowindow.open(map, marker);  */
-
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
         map.setCenter(coords);
     } 
@@ -217,7 +205,6 @@ function placesSearchCB(data, status, pagination) {
 
         alert('검색 결과 중 오류가 발생했습니다.');
         return;
-
     }
 }  
 
