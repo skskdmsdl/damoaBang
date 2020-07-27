@@ -1,20 +1,16 @@
-<%@page import="board.model.vo.BoardForList"%>
-<%@page import="board.model.vo.RoomBoard"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
-<%
-	//List<Room> list = (List<Room>)request.getAttribute("list");
-	List<RoomBoard> list = (List<RoomBoard>)request.getAttribute("list");
-	String pageBar = (String)request.getAttribute("pageBar");
-	int cnt = (int)request.getAttribute("totalContents");
-%>
-
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/board.css" />
-     <div class="lookinRoomView">
-     	<section id="option-tab">
-     		<form action="<%= request.getContextPath() %>/board/searchRoom" >
+
+	<div class="roomUpdatePage">
+        <h1 >매매 올리기</h1>
+        <form action="<%= request.getContextPath() %>/board/enroll" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="br_cp_id" value="<%=memberLoggedIn.getMemberId() %>" />
+		    <section>
+		        <input type="text" name="board_title" id="boardTitle" placeholder="제목을 적어주세요"  >
+			</section>
+			<section id="roomUpSection">
 	            <select name="room_val" class="selectOption" >
 	                <option value="OO">오픈형 원룸</option> 
 	                <option value="SO">분리형 원룸</option>
@@ -37,107 +33,57 @@
 	                <option value="10" >5~10만 </option>
 	                <option value="20" >10~20만</option>
 	            </select>
-	            <select name="option" class="selectOption" >
-	                <option value="oneRoom" >추가옵션</option>
-	                <option value="twoRoom" >세탁기</option>
-	                <option value="threeRoom" >냉장고</option>
+	            <select name="size" class="selectOption" >
+	                <option value="14" >14평</option>
+	                <option value="24" >24평</option>
+	                <option value="34" >34평</option>
 	            </select>
-     			<input type="submit" class="room-searchBtn" value="검색">
-     		</form>
-     	</section>
-     		<form action="<%= request.getContextPath() %>/board/searchLocationRoom" id="map-searchFrm" onsubmit="return searchPlaces();">
-	            <input type="text" name="localSearch" id="localSearch" placeholder="지역별 검색" >
-	            <button type="submit" class="room-searchBtn">검색</button>
-     		</form>
-     	<section class="RoomInsert">
-     		<button class="roomUpdateBtn" >방 올리기</button>
-     	</section>
-     </div>  
-	
-	
-		<div id="roomViewCon1">
-            <h2>전체 게시글 : <%= cnt %>개</h2>
-	 <% 
-	 if(list == null || list.isEmpty()){ %>           
-         	<%--조회된 행이 없는 경우 --%>
-				<div>조회된 행이 없습니다.</div>
-		<% 
-			} 
-		   	else {
-				for(RoomBoard b : list){
-		%>  
-		<%--조회된 행이 있는 경우 --%> 
-            
-               <div>
-		                <% if(b.getOk().equals("T")){ %>
-		                	
-			            	<a href="<%= request.getContextPath() %>/board/boardView?board_num=<%= b.getBoard_num() %>&br=<%= b.getBr_cp_id() %>" >
-			                	<img src="<%=request.getContextPath()%>/upload/board/<%=b.getRenameName() %>">
-			            	</a>
-		            	<% } else{ %>
-		            	
-		            	<input <%= memberLoggedIn.getMemberRole().equals("A") ? "type='button'" : "type='hidden'" %>  class="okBtn" value="<%= b.getBoard_num() %>" style="z-index:10;cursor:pointer; width:400px; height:280px;background-color:rgba(0,0,0,0.1); border: none;color:rgba(0,0,0,0);position: absolute;margin: 0;"/>
-			                	<img src="<%=request.getContextPath()%>/upload/board/<%=b.getRenameName() %>" <%= memberLoggedIn.getMemberRole().equals("A") ? "" : "onclick='alret();'" %> style="filter: brightness(50%); cursor: pointer;">
-		            	
-		            	<% } %> 
-		            <br>
-		            <input type="text" value="등록날짜  <%= b.getEnrolldate() %>"> <br />
-		             	<%= b.getBoard_title() %>
-		        </div>
-		         <% 		}
-				
-					} 
-				%>  
-				
-				
- 
-				
-				
-				 
-		<div id='pageBar'>
-			<%= pageBar %>
-		</div>
-		
-		
-	</div>
-	<div id="roomViewCon2">
-		<div id="map" style="width:100%;height:800px;" ></div>
-	</div>
-    
+	            <span>
+	            	입주가능일 : <input type="date" name="movedate" id="movedate" >
+	            </span>
+	            <span>
+	            	층 : <input type="text" name="floor" id="floor" >
+	            </span>
+			</section>
+			
+			<section>
+		        <div id="roomUploadFile">
+		            <textarea rows="5" cols="40" name="boardContent" id="roomUpdateTxt"></textarea>
+		            <!-- method="post" enctype="multipart/form-data" 사진 여러개를 같이 올릴수 있게 해줌. -->
+		            <br />
+		            <!-- 위치 검색 -->
+		            <div style="width:75%;height:450px; margin-top:40px; border-bottom: 1px solid #999;" >
+			            <div id="roomUpSearch">
+			            	<p id="roomUpSearchTxt">방 위치 선택</p>
+				            <input type="text" name="location" id="localSearch" placeholder="방 위치를 입력해주세요" required>
+				            <button onclick="searchPlaces(); return false;" class="room-searchBtn">확인</button>
+			            	<br /><br />
+			            	<p>주의사항</p><br />
+			            	<p>상세한 주소를 검색해주세요!</p>
+			            	<p>예시) 서울시 강남구 (X)</p>
+			            	<p>예시) 서울특별시 강남구 테헤란로10길 9 (O)</p>
+			            	<p>예시) 테헤란로10길 9 (O)</p>
+			            </div>
+			     		<div id="roomUpMap">
+							<div id="map" style="width:400px;height:400px;" ></div>
+						</div>
+		            </div>
+					<div  id="roomUpFile">
+						<p>이미지 등록</p>
+						<div id="roomUpFileInput">
+			            <input type="file" name="f0"/>  &nbsp;&nbsp;
+        				<input type="button" value="추가" onclick="addFile()" />&nbsp;
+        				<input type="button" value="삭제" onclick="delFile()" />
+						</div>
+					</div>
+			    </div>
+		    </section>
+		        	<input type="submit" value="글등록" id="boardBtn1">
+        </form>
+</div>
+
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f812560fa3200866e643713203eb962f&libraries=services"></script>
 <script>
-//방올리기
-$(document).ready(function(){
-    
-    $(".roomUpdateBtn").click(function(){
-    	alert("방을 올리시려면 중개인에게 연락해주세요!");
-    });
-});
-function alret(){
-    alert("비공개 게시글입니다.");
-}
-$(document).ready(function(){
-    $(".okBtn").click(function(){
-	if(!confirm("게시물을 공개처리 하시겠습니까?")) return;
-		$.ajax({
-			url: "<%= request.getContextPath() %>/admin/moveOk",
-			method: "POST", 
-			dataType: "text", //html, text, json, xml 리턴된 데이터에 따라 자동설정됨
-			data:  {"board_num": $(".okBtn").val()}, //사용자 입력값전달
-			success: function(data){
-				//요청성공시 호출되는 함수
-				console.log(data);
-				//$(".result-container").html(data);
-				location.href="<%=request.getContextPath()%>/board/lookingRoom";
-				history.go(0);
-			},
-			error: function(xhr, textStatus, errorThrown){
-				console.log("ajax 요청 실패!");
-				console.log(xhr, textStatus, errorThrown);
-			}
-		});
-    });
-});
 // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
 //var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
@@ -255,8 +201,19 @@ function displayMarker(place) {
      infowindow.open(map, marker);
  });
 } 
-
+var idx = 0;
+function addFile(){
+    $("#roomUpFileInput").last().after("<input type='file' name='f"+ ++idx +"'/><br>");
+}
+function delFile(){
+    //input:file의 최소개수는 1개로 제한.
+    if($("input:file").length>1)
+        $("#roomUpFile>input").last().remove();
+}
 </script>
-
-
-
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

@@ -173,6 +173,10 @@ public class MemberDAO {
 			
 		try {
 			pstmt = conn.prepareStatement(sql);
+			//cPage=1, numPerPage=10 : 1,10
+			//cPage=2, numPerPage=10 : 11,20
+			//cPage=3, numPerPage=10 : 21,30
+			//....
 			pstmt.setInt(1, (cPage - 1) * numPerPage + 1);
 			pstmt.setInt(2, cPage * numPerPage);
 			
@@ -196,6 +200,7 @@ public class MemberDAO {
 			close(rset);
 			close(pstmt);
 		}
+//		System.out.println("list@dao = " + list);
 		
 		return list;
 	}
@@ -228,6 +233,8 @@ public class MemberDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		String sql = prop.getProperty("searchMemberPaging");
+//		select * from member where # like ?
+//		select * from member where member_name like ?
 		
 		String columnName = "";
 		switch(searchType) {
@@ -237,6 +244,7 @@ public class MemberDAO {
 		}
 		
 		sql = sql.replace("#", columnName);
+		System.out.println("sql@dao = " + sql);
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -283,6 +291,7 @@ public class MemberDAO {
 		}
 		
 		sql = sql.replace("#", columnName);
+		System.out.println("sql@dao = " + sql);
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -299,6 +308,7 @@ public class MemberDAO {
 			close(pstmt);
 		}
 		
+		System.out.println("totalContents@dao = " + totalContents);
 		return totalContents;
 	}
 
@@ -306,6 +316,7 @@ public class MemberDAO {
 		int result = 0;
 		PreparedStatement pstmt = null;
 		String sql = prop.getProperty("updatePassword");
+		//update member set password = ? where member_id = ?
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -319,6 +330,7 @@ public class MemberDAO {
 		} finally {
 			close(pstmt);
 		}
+//		System.out.println("result@dao = " + result);
 		
 		return result;
 	}
@@ -365,6 +377,7 @@ public class MemberDAO {
 			close(pstmt);
 		}
 		
+//		System.out.println("result@dao="+result);
 		return result;
 	}
 

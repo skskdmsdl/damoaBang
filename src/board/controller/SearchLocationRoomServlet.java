@@ -59,6 +59,7 @@ public class SearchLocationRoomServlet extends HttpServlet {
 		//3. view단 처리 : boardList.jsp
 		
 		request.setAttribute("list", list);
+		request.setAttribute("location", location);
 		request.setAttribute("pageBar", pageBar);
 		request.setAttribute("totalContents", totalContents);
 		
