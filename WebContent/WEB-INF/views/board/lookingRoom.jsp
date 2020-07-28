@@ -52,7 +52,7 @@
 		     			<input type="submit" class="room-searchBtn" value="검색">
 		     		</form>
 		     	</section>
-		     		<form action="<%= request.getContextPath() %>/board/searchLocationRoom"  id="map-searchFrm" onsubmit="return searchPlaces();">
+		     		<form action="<%= request.getContextPath() %>/board/searchLocationRoom"  id="map-searchFrm">
 			            <input type="text" name="localSearch" id="localSearch" placeholder="지역별 검색" >
 			            <button type="submit" class="room-searchBtn">검색</button>
 		     		</form>
@@ -186,11 +186,6 @@ geocoder.addressSearch('<%= location %>', function(result, status) {
         position: coords
     });
 
-    // 인포윈도우로 장소에 대한 설명을 표시합니다
-    var infowindow = new kakao.maps.InfoWindow({
-        content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
-    });
-    infowindow.open(map, marker);
 
     // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
     map.setCenter(coords);

@@ -50,7 +50,7 @@ public class SearchRoomServlet extends HttpServlet {
 		//2. 업무로직 : 게시글 목록 조회
 		//a. contents 영역
 		List<RoomBoard> list = boardService.searchBoardList(room_val, tax_val, price, fee, cPage, numPerPage); 
-		//System.out.println("list@servlet="+list);
+		System.out.println("list@servlet="+list);
 		
 		//b. pageBar 영역
 		int totalContents = boardService.selectTotalContents(room_val, tax_val, price, fee);
