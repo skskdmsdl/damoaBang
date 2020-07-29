@@ -191,39 +191,6 @@ $(document).ready(function(){
 						<li class="nav-item"><a href="#" class="nav-link" onclick="signupbtn()">로그인</a></li>
 					<% } %>
 				</ul>
-				<!-- 				<ul class="navbar-nav"> --> <%-- 									<%if (memberLoggedIn == null) {%> --%>
-<%-- 									<li class="nav-item"><a href="<%=request.getContextPath()%>/community/communityQnA" class="nav-link">커뮤니티</a></li> --%>
-<%-- 									<li class="nav-item"><a href="<%=request.getContextPath()%>/board/boardList" class="nav-link">방 찾기</a></li> --%>
-<!-- 									<li class="nav-item"><a href="#" class="nav-link" onclick="signupbtn()">로그인</a></li> -->
-
-<%-- 									<%} else if (memberLoggedIn.getMemberRole().equals("U")) {%> --%>
-<%-- 									<li class="nav-item-community"><a href="<%=request.getContextPath()%>/community/communityQnA" class="nav-link">커뮤니티</a></li> --%>
-<%-- 									<li class="nav-item-room"><a href="<%=request.getContextPath()%>/board/boardList" class="nav-link">방 찾기</a></li> --%>
-<%-- 									<li class="nav-item"><a href="#" class="nav-user-link"><img style="background-color: rgb(255, 136, 81); border-radius: 60%;" src="<%=request.getContextPath()%>/images/user.png" /></a></li> --%>
-
-<!-- 										<ul class="profile__list"> -->
-<%-- 											<li class="login-profile" id="login-profile-img"><img style="background-color: rgb(255, 136, 81); border-radius: 60%;" src="<%=request.getContextPath()%>/images/user.png" /> --%>
-<%-- 											<li class="login-profile"><%=memberLoggedIn.getMemberId()%></li> --%>
-<%-- 											<li class="login-profile" id="login-profile-email"><%=memberLoggedIn.getEmail()%></li> --%>
-<%-- 											<li class="login-mypage" id="login-mypage-info"><div onclick="location.href='<%=request.getContextPath()%>/member/memberProfileView'">내 정보 보기</div> --%>
-<%-- 											<li class="login-mypage" id="login-mypage-logout"><div onclick="location.href='<%=request.getContextPath()%>/member/logout'">로그아웃</div></li> --%>
-<!-- 										</ul> -->
-<%-- 									<%} else {%> --%>
-<%-- 									<li class="nav-item-community"><a href="<%=request.getContextPath()%>/community/communityQnA" class="nav-link">커뮤니티</a></li> --%>
-<%-- 									<li class="nav-item-room"><a href="<%=request.getContextPath()%>/board/boardList" class="nav-link">방 찾기</a></li> --%>
-<%-- 									<li class="nav-item"><a href="#" class="nav-user-link"><img style="background-color: rgb(0, 0, 255); border-radius: 60%;" src="<%=request.getContextPath()%>/images/user.png" /></a></li> --%>
-
-<!-- 									<ul class="profile__list"> -->
-<%-- 										<li class="login-profile" id="login-profile-img"><img style="background-color: rgb(0, 0, 255); border-radius: 60%;" src="<%=request.getContextPath()%>/images/user.png" /> --%>
-<%-- 										<li class="login-profile"><%=memberLoggedIn.getMemberId()%></li> --%>
-<%-- 										<li class="login-profile" id="login-profile-email"><%=memberLoggedIn.getEmail()%></li> --%>
-<%-- 										<li class="login-mypage" id="login-mypage-info"><div onclick="location.href='<%=request.getContextPath()%>/admin/memberList';">회원정보 조회</div></li> --%>
-<%-- 										<li class="login-mypage" id="login-mypage-logout"><div onclick="location.href='<%=request.getContextPath()%>/member/logout'">로그아웃</div></li> --%>
-<!-- 									</ul> -->
-<%-- 									<% --%>
-<!-- //  									}  -->
-<%--  									%>  --%>
-<!-- 								</ul> -->
 			
 						</div>
 		</div>

@@ -253,7 +253,7 @@ $("#file").on('change',function(){
 
 	<div class="mypage-Likediv">
 	<div class="mypage-profile3_3">
-	<div class="mypage-profile3">
+	<div class="mypage-profile3" style="float:left;">
 		<section class="mypage-allView">
 			<form method="post" action="<%=request.getContextPath() %>/member/memberProfile" enctype="multipart/form-data">
 			<table>
@@ -276,7 +276,6 @@ $("#file").on('change',function(){
 						<div class="filebox"> 
 							<label for="file" >사진 업로드</label> 
 							<input type="file" id="file" name="profile"> 
-								<!-- <input class="upload-name" value="파일선택">  -->
 						</div>
 					</td>
 				</tr>
@@ -291,6 +290,7 @@ $("#file").on('change',function(){
 		</section>
 	</div>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<div style="width: 900px; height: 800px; width: 850px; display: inline-block; ">
 	<% if(likeList == null || likeList.isEmpty()){ %>           
 	<div class="myLikeListViewCount">
 		<p class="myLikeCountViewtotal">전체 : <%= cnt %>개</p>
@@ -312,7 +312,7 @@ $("#file").on('change',function(){
 			<div class="ClickedLikeListPageBar" id='pageBar'>
 				<%= pageBar %>
 			</div>
-<!-- 		</div> -->
+		</div>
 	</div>
 	</div>
 	

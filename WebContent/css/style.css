@@ -1170,10 +1170,11 @@ li {
 }
 
 #conLink1 {
-  cursor: pointer;
-  margin-left: 500px;
-  font-weight: 700;
-  color: #dbdbdb;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 500px;
+    font-weight: 700;
+    color: #888;
 }
 #conLink1:hover {
   color: rgb(255, 138, 61);
@@ -1193,6 +1194,3 @@ footer {
 	clear: both;
 	text-align: center;
 }
-/* .rot { */
-/* 	font-family: againts; */
-/* } */
