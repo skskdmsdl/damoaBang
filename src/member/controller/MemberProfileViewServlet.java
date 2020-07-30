@@ -49,7 +49,7 @@ public class MemberProfileViewServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//1. 사용자 입력값
-	      int numPerPage = 4;
+	      int numPerPage = 6;
 	      int cPage = 1;
 	      try {
 	         cPage = Integer.parseInt(request.getParameter("cPage"));         
@@ -60,11 +60,10 @@ public class MemberProfileViewServlet extends HttpServlet {
 	      HttpSession session = request.getSession();
 	      Member memberLoggedIn 
 	         = (Member)session.getAttribute("memberLoggedIn");
-	      System.out.println(memberLoggedIn.getMemberId());
+	      //System.out.println(memberLoggedIn.getMemberId());
 	      //2. 업무로직 : 게시글 목록 조회
 	      //1. contents 영역
 	      List<RoomBoard> likeList = BoardService.selectLikeList(memberLoggedIn.getMemberId(), cPage, numPerPage); 
-	      System.out.println("like@servlet="+likeList);
 	      
 	      
 	      List<ComBoard> comList = new CommunityService().selectMemberList(memberLoggedIn.getMemberId());
@@ -76,7 +75,6 @@ public class MemberProfileViewServlet extends HttpServlet {
 	      String url = request.getRequestURI() + "?";
 	      String pageBar = Utils.getPageBarHtml(cPage, numPerPage, totalContents, url);
 	      
-	      System.out.println("@@@@@@@@@cnt"+comList);
 		//3. view단 처리 : boardList.jsp
 		
 		request.setAttribute("cnt", cnt);
