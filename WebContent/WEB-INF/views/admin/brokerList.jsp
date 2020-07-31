@@ -57,7 +57,6 @@ function deleteMember(){
 		success: function(data){
 			//요청성공시 호출되는 함수
 			console.log(data);
-			//$(".result-container").html(data);
 			location.href="<%=request.getContextPath()%>/admin/brokerBlacklist";
 		},
 		error: function(xhr, textStatus, errorThrown){

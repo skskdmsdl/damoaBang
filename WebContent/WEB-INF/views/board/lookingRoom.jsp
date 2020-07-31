@@ -71,7 +71,6 @@
 		   	else {
 				for(RoomBoard b : list){
 		%>  
-		<%--조회된 행이 있는 경우 --%> 
             
                <div>
 		                <% if(b.getOk().equals("T")){ %>
@@ -81,7 +80,6 @@
 			            	</a>
 		            	<% } else{ %>
 		            			<input <%= memberLoggedIn.getMemberRole().equals("A") ? "type='button'" : "type='hidden'" %>  class="okBtn" value="<%= b.getBoard_num() %>" style="z-index:10;cursor:pointer; width:400px; height:280px;background-color:rgba(0,0,0,0.1); border: none;color:rgba(0,0,0,0);position: absolute;margin: 0;"/>
-<%-- 			                	<img src="<%=request.getContextPath()%>/upload/board/<%=b.getRenameName() %>" <%= memberLoggedIn.getMemberRole().equals("A") ? "" : "onclick='alret();'" %> style="filter: brightness(50%); cursor: pointer;"> --%>
 								<img src="<%=request.getContextPath()%>/upload/board/<%=b.getRenameName() %>" onerror="this.src='<%= request.getContextPath() %>/images/roomImg01.jpg'" <%= memberLoggedIn.getMemberRole().equals("A") ? "" : "onclick='alret();'" %> style="filter: brightness(50%); cursor: pointer;">
 		            	
 		            	<% } %> 
@@ -105,29 +103,6 @@
     
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f812560fa3200866e643713203eb962f&libraries=services"></script>
 <script>
- //지역검색
-<%-- $(document).ready(function(){
-    $(".room-searchBtn").submit(function(){
-		$.ajax({
-			url: "<%= request.getContextPath() %>/board/searchLocationRoom",
-			method: "POST", 
-			dataType: "text", //html, text, json, xml 리턴된 데이터에 따라 자동설정됨
-			data:  {"location": $("#localSearch").val()}, //사용자 입력값전달
-			success: function(data){
-				//요청성공시 호출되는 함수
-				console.log("데이터"+data);
-				//$(".result-container").html(data);
-				$("#roomViewCon1").html(data)
-				$
-				history.go(0);
-			},
-			error: function(xhr, textStatus, errorThrown){
-				console.log("ajax 요청 실패!");
-				console.log(xhr, textStatus, errorThrown);
-			}
-		});
-    });
-});  --%>
 //방올리기
 $(document).ready(function(){
     
@@ -193,7 +168,5 @@ geocoder.addressSearch('<%= location %>', function(result, status) {
 });    
 
 </script>
-
-
 
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>

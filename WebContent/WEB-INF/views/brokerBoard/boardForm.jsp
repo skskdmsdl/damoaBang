@@ -52,8 +52,6 @@
 	</form>
 			
 			<div id="roomDetail-info2">
-				<%-- <img src="<%=request.getContextPath()%>/images/heart.png" alt="" />좋아요
-				<img src="<%=request.getContextPath()%>/images/alert.png" onclick="roomReportBtn();" alt="" />허위매물 신고 --%>
 				<% if( brokerLoggedIn!=null && br.getBr_cp_id().equals(brokerLoggedIn.getBr_cp_id())
 					){ %>
 				<input type="button" class="modifyBoard" value="수정하기" onclick="location.href='<%= request.getContextPath() %>/brokerBoard/boardUpdate?board_num=<%= roomBoard.getBoard_num() %>&br=<%= br.getBr_cp_id() %>';" /> 
