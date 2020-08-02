@@ -97,43 +97,6 @@ public class BoardUpdateServlet extends HttpServlet {
 		String oldOriginalFileName = multipartRequest.getParameter("oldOriginalFileName");
 		String oldRenamedFileName = multipartRequest.getParameter("oldRenamedFileName");
 		String delFile = multipartRequest.getParameter("delFile");
-	/*	
-		//3. 업무로직
-		Board board 
-		= new Board(boardNo, boardTitle, boardWriter, boardContent, 
-				boardOriginalFileName, boardRenamedFileName, null, 0);
-
-		//기존 첨부파일이 있는 경우 처리
-		if(!"".equals(oldOriginalFileName)) {
-			
-			//새 첨부파일이 없는 경우
-			if(boardOriginalFileName == null 
-			 && delFile == null) {
-				board.setBoardOriginalFileName(oldOriginalFileName);
-				board.setBoardRenamedFileName(oldRenamedFileName);
-			}
-			//새 첨부파일이 있는 경우
-			else {
-				//파일 삭제
-				File f = new File(saveDirectory, oldRenamedFileName);
-				f.delete();
-				System.out.println("[" + oldOriginalFileName + "] 파일 삭제!");
-			}
-			
-		}
-		
-		
-		System.out.println("board@servlet = " + board);
-		int result = new BoardService().updateBoard(board);
-		
-		//4. view단
-		String msg = result > 0 ? "게시글 수정 성공!" : "게시글 수정 실패!";
-		String loc = "/board/boardView?boardNo=" + boardNo;
-		request.setAttribute("msg", msg);
-		request.setAttribute("loc", loc);
-		request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp")
-			   .forward(request, response);
-		*/
 			
 	}
 

@@ -45,9 +45,6 @@ public class BoardReportServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
-        
-		
 	
 	}
 
@@ -76,7 +73,6 @@ public class BoardReportServlet extends HttpServlet {
 		
 		Broker reportBr = new Broker(br_cp_id, null, null, null, null, null, null, null, 0, null, br.getOutcount()+1, null, null);
 		int result = new BrokerService().updateReport(reportBr);
-		System.out.println("신고완료");
 		request.setAttribute("msg", "신고완료!");
 		request.setAttribute("loc", "/board/boardView?board_num="+board_num+"&br="+br_cp_id); 
 		
@@ -85,13 +81,5 @@ public class BoardReportServlet extends HttpServlet {
 		reqDispatcher.forward(request, response);
 		}
 		
-		/*if(reportBr.getOutcount()==3) {
-			//response.sendRedirect("/WEB-INF/views/board/lookingRoom.jsp");
-			return;
-		}*/
-		
-		//request.setAttribute("msg", "인증완료! 신고 완료!");
-		//request.setAttribute("loc", "/");
-		//request.getRequestDispatcher("/views/common/msg.jsp").forward(request, response);
 	}
 }

@@ -101,11 +101,9 @@ public class BoardEnrollServlet extends HttpServlet {
 		
 		//Room객체로 만들기
 		Room newRoom = new Room(0, 0, null, room_val, tax_val, price, location, size, floor, movedate_, fee);
-		System.out.println("newRoom="+newRoom);
 		
 		//업무로직
 		int result = new BoardService().insertRoom(newRoom);
-		System.out.println("result@RoomEnrollServlet="+result);
 		
 		
 		

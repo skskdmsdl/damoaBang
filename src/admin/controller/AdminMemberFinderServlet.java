@@ -51,10 +51,6 @@ public class AdminMemberFinderServlet extends HttpServlet {
 		= new MemberService().searchMember(searchType, searchKeyword, cPage, numPerPage);
 		System.out.println("list@servlet = " + list);
 		
-		//select * from member where member_id like '%k%'
-		//select * from member where ? like ?
-		//식별자 부분은 PrepareStatement가 지원하는 setter를 이용할 수 없다.
-		
 		//pageBar영역
 		int totalContents = new MemberService().selectTotalContents(searchType, searchKeyword);
 		String url 

@@ -194,7 +194,6 @@ $("#file").on('change',function(){
 		<a class="noneHover" href="<%= request.getContextPath() %>/brokerBoard/boardView?board_num=<%= b.getBoard_num() %>&br=<%= b.getBr_cp_id() %>">
 		<section id="br_itemInfo">
 			<p class="SearchRoomForSaleparagraph"><%= b.getBoard_title() %><span class="SearchRoomclickLikeEnrollDate"><%= b.getEnrolldate() %></span></p>
-<%-- 			<p><%= b.getContent().length()<19 ? b.getContent() : b.getContent().substring(0,50) %></p> --%>
 			<p class="approveForSaleRoom"><%= b.getOk().equals("T")?"승인":"미승인" %></p>
 		</section>
 		</a>

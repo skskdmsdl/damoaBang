@@ -143,7 +143,6 @@ public class BoardDetailServlet extends HttpServlet {
 		
 		BoardLike resultBl = new BoardService().selectLikeOne(board_num, memberId);
 		boolean like = resultBl == null ? false : true;
-		System.out.println("like@@@@@@@@"+like);
 		//4. 사용자 응답처리 : msg.jsp
 		//request.setAttribute("like", like);
 		//request.getRequestDispatcher("/WEB-INF/views/board/boardView?board_num="+board_num+"&br="+br_cp_id).forward(request, response);
