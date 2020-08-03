@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import common.JDBCTemplate;
+import static common.JDBCTemplate.*;
 import common.util.Utils;
 import member.model.service.MemberService;
 import member.model.vo.Member;
