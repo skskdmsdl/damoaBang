@@ -51,7 +51,6 @@ public class AdminMemberListServlet extends HttpServlet {
 		//페이지바 영역 html
 		String url = request.getRequestURI() + "?";// /mvc/admin/memberList?
 		int totalContents = new MemberService().selectTotalContents();
-		System.out.println("totalContents@servlet = " + totalContents);
 		String pageBar 
 			= Utils.getPageBarHtml(cPage, numPerPage, totalContents, url);
 		

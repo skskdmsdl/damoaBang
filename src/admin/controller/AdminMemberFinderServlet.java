@@ -35,8 +35,6 @@ public class AdminMemberFinderServlet extends HttpServlet {
 		//1. 사용자 입력값 처리
 		String searchType = request.getParameter("searchType");
 		String searchKeyword = request.getParameter("searchKeyword");
-		System.out.println("searchType@servlet = " + searchType);
-		System.out.println("searchkeyword@servlet = " + searchKeyword);
 		
 		int numPerPage = 10;
 		int cPage = 1;
@@ -49,7 +47,6 @@ public class AdminMemberFinderServlet extends HttpServlet {
 		//contents영역 : 
 		List<Member> list 
 		= new MemberService().searchMember(searchType, searchKeyword, cPage, numPerPage);
-		System.out.println("list@servlet = " + list);
 		
 		//pageBar영역
 		int totalContents = new MemberService().selectTotalContents(searchType, searchKeyword);
@@ -59,7 +56,6 @@ public class AdminMemberFinderServlet extends HttpServlet {
 			+ "&searchKeyword=" + searchKeyword 
 			+ "&";
 		// /mvc/admin/memberFinder?searchType=memberId&searchKeyword=h
-		System.out.println("totalContents@servlet = " + totalContents);
 		String pageBar = Utils.getPageBarHtml(cPage, numPerPage, totalContents, url);
 		
 		

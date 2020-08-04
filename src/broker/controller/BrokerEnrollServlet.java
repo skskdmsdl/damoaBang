@@ -64,11 +64,9 @@ public class BrokerEnrollServlet extends HttpServlet {
 		
 		//Member객체로 만들기
 		Broker newBroker = new Broker(br_cp_id, email, password, br_cp_name, br_name, phone, joindate_, insurance, 0, null, 0, null, null);
-		System.out.println("newBroker="+newBroker);
 		
 		//3. 업무로직: db에 insert (DML -> int =>1,0)
 		int result = new BrokerService().insertBroker(newBroker);
-		System.out.println("result@brokerEnrollServlet="+result);
 		
 		//4. 사용자 응답처리 : msg.jsp
 		String msg = result > 0 ? "회원 가입 성공!" : "회원 가입 실패!";

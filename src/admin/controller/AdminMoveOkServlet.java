@@ -41,14 +41,11 @@ public class AdminMoveOkServlet extends HttpServlet {
 		
 		//2.사용자입력값처리
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
-		System.out.println("moveOk@servlet"+board_num);
-		
 		
 		RoomBoard rb = new RoomBoard(board_num, null, null, null, null, 0, null, null, "T");
 		
 		//3.업무로직
 		int result = new BoardService().updateOk(rb);
-		System.out.println("result@servlet="+result);
 	
 	}
 

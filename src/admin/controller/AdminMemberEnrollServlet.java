@@ -55,11 +55,9 @@ public class AdminMemberEnrollServlet extends HttpServlet {
 		//Member객체로 만들기
 		Member newMember = new Member(memberId, email, "1ARVn2Auq2/WAqx2gNrL+q3RNjAzXpUfCXrzkA6d4Xa22yhRLy4AC50E+6UTPoscbo31nbOoq51gvkuXzJ6B2w==", memberRole, phone, null, 0, null, "F");
 		
-		System.out.println("newMember="+newMember);
 		
 		//3. 업무로직: db에 insert (DML -> int =>1,0)
 		int result = new MemberService().insertMember(newMember);
-		System.out.println("result@memberEnrollServlet="+result);
 		
 		//4. 사용자 응답처리 : msg.jsp
 		String msg = result > 0 ? "회원 등록 성공!" : "회원 등록 실패!";
