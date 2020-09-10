@@ -68,6 +68,29 @@
 
 
 /********* 프로필 페이지 **********/
+#chatBtn{
+	width:55px;
+	height:55px;
+	line-height: 10px;
+	font-size: 50px;
+	color:white;
+	outline:none;
+	border:none;
+	background-color: white;
+	border-radius: 50%;
+	position:fixed;
+	right:30px;
+	bottom: 30px;
+	
+	
+}
+div#talkjs-container{
+	display:none;
+	position:fixed;
+	width: 90%;
+    height: 500px;
+    
+}
 .mypage-alldiv{
 	margin-top: 2em;
 	margin-left: 7em;

@@ -64,6 +64,7 @@
 		</section>
 	</div>
 	
+	<!-- 좋아요 -->
 	<form name="likeFrm" action="<%= request.getContextPath()%>/board/boardView" method="POST">
 		<input type="hidden" id="likeMemId" name="memberId" value="<%= memberLoggedIn.getMemberId() %>" />
 		<input type="hidden" id="likeBrId" name="br_cp_id" value="<%= roomBoard.getBr_cp_id() %>" />

@@ -6,7 +6,6 @@
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/member.css" />
 <%
-
 	List<RoomBoard> likeList = (List<RoomBoard>)request.getAttribute("likeList");
 	String pageBar = (String)request.getAttribute("pageBar");
 	int cnt = (int)request.getAttribute("totalContents");
@@ -15,9 +14,7 @@
 %>
 <script>
 $(function(){
-	$("#chatBtn").click(function(){
-		$("#talkjs-container").toggle('show');
-	})
+	
 	$(".profile-nav").click(function(){
 		$(".sub1").css("display", "block");
 		$(".mypage-alldiv").css("display", "block");
@@ -116,64 +113,7 @@ function deleteMember(){
 $("#file").on('change',function(){
 	  var fileName = $("#file").val();
 	  $(".upload-name").val(fileName);
-});
-
-let userName = "<%=memberLoggedIn.getMemberId().equals("dddd") ? "상담사" : "유저" %>";
-/* talkJS */
-(function(t,a,l,k,j,s){
-s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.head.appendChild(s)
-;k=t.Promise;t.Talk={v:3,ready:{then:function(f){if(k)return new k(function(r,e){l.push([f,r,e])});l
-.push([f])},catch:function(){return k&&new k()},c:l}};})(window,document,[]);
-
-
-Talk.ready.then(function() {
-    var me = new Talk.User({
-        id: "<%=memberLoggedIn.getMemberId()%>",
-        name: userName,
-        email: "<%=memberLoggedIn.getEmail()%>",
-        photoUrl: "http://localhost:9090/web/",
-        welcomeMessage: "Hey there! How are you? :-)"
-    });
-    window.talkSession = new Talk.Session({
-        appId: "t9ROalbH",
-        me: me
-    });
-    var other = new Talk.User({
-        id: "dddd",
-        name: "상담사",
-        email: "dddd@naver.com",
-        photoUrl: "http://localhost:9090/web/",
-        welcomeMessage: "Hey, how can I help?"
-    });
-
-    var conversation = talkSession.getOrCreateConversation(Talk.oneOnOneId(me, other))
-    conversation.setParticipant(me);
-    conversation.setParticipant(other);
-
-    var inbox = talkSession.createInbox({selected: conversation});
-    inbox.mount(document.getElementById("talkjs-container"));
-    
-});
-
-var other = new Talk.User({
-	 id: "<%=memberLoggedIn.getMemberId()%>",
-     name: userName,
-     email: "<%=memberLoggedIn.getEmail()%>",
-     photoUrl: "http://localhost:9090/web/",
-     welcomeMessage: "Hey, how can I help?"
-});
-
-var conversation = talkSession.getOrCreateConversation(Talk.oneOnOneId(me, other));
-conversation.setParticipant(me);
-conversation.setParticipant(other);
-
-var conversation = talkSession.getOrCreateConversation("<%=memberLoggedIn.getMemberId()%>");
-
-conversation.setAttributes({
-    subject: "Hair Wax 5 Gallons"
-}); 
-
-
+	});
 </script>
 	<div class="mypage-nav-bar">
 		<a class="profile-nav">프로필&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
@@ -188,15 +128,6 @@ conversation.setAttributes({
 		<a class="click4">회원정보수정</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<a class="click5">비밀번호 변경</a>
 	</div>
-	
-	<div>
-		<button id="chatBtn">🧑</button>
-	</div>
-	
-	<!-- TalkJS -->
-    <div id="talkjs-container" style="right:30px;">
-    	<i>Loading chat...</i>
-    </div>
 	
 	<div class="mypage-alldiv">
 	<div class="mypage-profile1_1">
