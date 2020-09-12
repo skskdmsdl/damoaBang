@@ -125,7 +125,6 @@ s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.h
 ;k=t.Promise;t.Talk={v:3,ready:{then:function(f){if(k)return new k(function(r,e){l.push([f,r,e])});l
 .push([f])},catch:function(){return k&&new k()},c:l}};})(window,document,[]);
 
-
 Talk.ready.then(function() {
     var me = new Talk.User({
         id: "<%=memberLoggedIn.getMemberId()%>",
@@ -143,7 +142,7 @@ Talk.ready.then(function() {
         name: "상담사",
         email: "dddd@naver.com",
         photoUrl: "http://localhost:9090/web/",
-        welcomeMessage: "Hey, how can I help?"
+        welcomeMessage: "무엇을 도와드릴까요?"
     });
 
     var conversation = talkSession.getOrCreateConversation(Talk.oneOnOneId(me, other))
@@ -152,7 +151,6 @@ Talk.ready.then(function() {
 
     var inbox = talkSession.createInbox({selected: conversation});
     inbox.mount(document.getElementById("talkjs-container"));
-    
 });
 
 var other = new Talk.User({
@@ -160,7 +158,7 @@ var other = new Talk.User({
      name: userName,
      email: "<%=memberLoggedIn.getEmail()%>",
      photoUrl: "http://localhost:9090/web/",
-     welcomeMessage: "Hey, how can I help?"
+     welcomeMessage: "무엇을 도와드릴까요?"
 });
 
 var conversation = talkSession.getOrCreateConversation(Talk.oneOnOneId(me, other));
@@ -330,7 +328,6 @@ conversation.setAttributes({
 					<th></th>
 					<td>
 						<img id="profileImg" src="<%= request.getContextPath() %>/upload/member/<%= memberLoggedIn.getProfile() %>" onerror="this.src='<%= request.getContextPath() %>/upload/member/user.png'" alt="profile">
-						
 					</td>
 				</tr>
 				<tr>
@@ -367,7 +364,6 @@ conversation.setAttributes({
 	</div>
 <!-- 		<div class="ClickedLikeListShow"> -->
 		<% } else {for(RoomBoard b : likeList){%>
-<%-- 		<p class="ClickedShowTotaLikelList">전체 : <%= cnt %>개</p>  --%>
 		<section id="my_pageRoomImg">
 			<a href="<%= request.getContextPath() %>/board/boardView?board_num=<%= b.getBoard_num() %>&br=<%= b.getBr_cp_id() %>" class="image featured"><img src="<%=request.getContextPath()%>/upload/board/<%=b.getRenameName() %>" onerror="this.src='<%= request.getContextPath() %>/images/roomImg01.jpg'" alt=""></a>
 			<p class="myPageRoomImgTitle"><%= b.getBoard_title() %></p>
