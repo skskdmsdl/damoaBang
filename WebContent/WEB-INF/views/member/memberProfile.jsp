@@ -131,7 +131,7 @@ Talk.ready.then(function() {
         name: userName,
         email: "<%=memberLoggedIn.getEmail()%>",
         photoUrl: "http://localhost:9090/web/",
-        welcomeMessage: "Hey there! How are you? :-)"
+        welcomeMessage: "대화를 시작하세요 :-)"
     });
     window.talkSession = new Talk.Session({
         appId: "t9ROalbH",
