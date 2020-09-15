@@ -149,8 +149,24 @@ Talk.ready.then(function() {
     conversation.setParticipant(me);
     conversation.setParticipant(other);
 
-    var inbox = talkSession.createInbox({selected: conversation});
-    inbox.mount(document.getElementById("talkjs-container"));
+    if(${memberLoggedIn.getMemberId() eq 'dddd'}){
+	    var inbox = talkSession.createInbox({selected: conversation});
+	    inbox.mount(document.getElementById("talkjs-container"));
+    }
+    else{
+
+        var conversation = window.talkSession.getOrCreateConversation(Talk.oneOnOneId(me, other));
+        conversation.setParticipant(me);
+        conversation.setParticipant(other);
+        var popup = window.talkSession.createPopup(conversation, { keepOpen: false });
+        popup.mount({ show: false });
+
+        var button = document.getElementById("btn-getInTouch");
+        button.addEventListener("click", function(event) {
+            event.preventDefault();
+            popup.show();
+        });
+    }
 });
 
 var other = new Talk.User({
