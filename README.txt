@@ -25,10 +25,10 @@
 * 게시판 등록/수정/삭제
 
 # ERD
-![erd](https://user-images.githubusercontent.com/66931820/97409160-8848b600-1940-11eb-953b-8f27d1c9120a.png)
+![image](https://user-images.githubusercontent.com/66931820/97410473-72d48b80-1942-11eb-9d3e-523daf8ab744.png)
 
 
-Oracle 계정 생성
+#Oracle 계정 생성
 
 아이디 : damoa
 비번 : damoa
