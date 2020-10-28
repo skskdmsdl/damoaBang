@@ -28,7 +28,7 @@
 ![erd2](https://user-images.githubusercontent.com/66931820/97410953-04dc9400-1943-11eb-8370-3775bd483b19.png)
 
 
-#Oracle 계정 생성
+# Oracle 계정 생성
 
 아이디 : damoa
 비번 : damoa
