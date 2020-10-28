@@ -25,7 +25,7 @@
 * 게시판 등록/수정/삭제
 
 # ERD
-![image](https://user-images.githubusercontent.com/66931820/97410473-72d48b80-1942-11eb-9d3e-523daf8ab744.png)
+![erd2](https://user-images.githubusercontent.com/66931820/97410727-c6df7000-1942-11eb-921d-cde6d3e6717c.png)
 
 
 #Oracle 계정 생성
