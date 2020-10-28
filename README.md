@@ -31,8 +31,8 @@
 # README
 localhost:9090/web
 
-아이디 : damoa
-비번 : damoa
+아이디 : damoa<br/>
+비번 : damoa<br/>
 sqldeveloper 사용 시 damoa.dmp 파일을 import 시켜주세요. 
 
 * USER
