@@ -29,21 +29,21 @@
 
 
 # README
+localhost:9090/web
 
 아이디 : damoa
 비번 : damoa
 
 sqldeveloper 사용 시 damoa.dmp 파일을 import 시켜주세요. 
 
-
 * USER
- * ID : abcd
- * PWD : 1234
+  * ID : abcd
+  * PWD : 1234
 
 * HOST
- * ID : 11111-2020-88888
- * PWD : 1234
+  * ID : 11111-2020-88888
+  * PWD : 1234
 
 * ADMIN
- * ID : admin
- * PWD : 1234
+  * ID : admin
+  * PWD : 1234
